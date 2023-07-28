@@ -39,11 +39,28 @@
             height: 0;
             overflow: hidden;
             transition: 0.5s;
-            
+            z-index:100;/*위로 올리기*/
+        }
+        #gnb ul a{
+            color: white;
+        }
+        #gnb:after{
+            /* 가상선택자 */
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            background-color: black;
+            top: 100%;
+            height: 0;
+            transition: 0.5s;
         }
         #gnb:hover ul{
-            background-color: white;
-            border-color: #222;
+           
+            height: 7rem;
+        }
+        #gnb:hover:after{
             height: 7rem;
         }
         #gnb>li:hover>a{
@@ -51,12 +68,12 @@
         }
         #hd{
             background-color: #ccc;
-            padding: 15px 0;
+            padding: 15px 0 0;          
         }
     </style>
 </head>
 <body>
-    <header class="container d-flex jcb" id="hd">
+    <header class="container d-flex jcb rel" id="hd">
         <h1><a href="#none" class="d-block">로고</a></h1>
         <ul id="gnb"class="d-flex">
             <li class="rel">
